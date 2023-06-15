@@ -11,7 +11,7 @@ import { Empresas } from './empresas';
 export class EmpresasComponent implements OnInit {
   empresas: Empresas[] = [];
   empresaSelecionada: Empresas | undefined;
-  novaEmpresa: Empresas = { id: 0, name: '', descricao: '' }
+  novaEmpresa: Empresas = { id: 0, nome: '', descricao: '' }
 
   constructor(private empresasService: EmpresasService){ }
 
@@ -32,7 +32,7 @@ export class EmpresasComponent implements OnInit {
     this.empresasService.adicionarEmpresa(this.novaEmpresa)
       .subscribe(() => {
         this.listarEmpresas();
-        this.novaEmpresa = { id: 0, name: '', descricao: '' };
+        this.novaEmpresa = { id: 0, nome: '', descricao: '' };
       });
   }
 
@@ -43,15 +43,17 @@ export class EmpresasComponent implements OnInit {
           this.listarEmpresas();
         });
     }
+    //Utilizei o cancelar aqui para que quando o usuário salvar, o editar seja fechado imediatamente
+    this.cancelarAtualizacao();
   }
 
   cancelarAtualizacao() {
     this.empresaSelecionada = undefined;
   }  
 
-  deletarEmpresa() {
-    if (this.empresaSelecionada) {
-      this.empresasService.deletarEmpresa(this.empresaSelecionada.id)
+  deletarEmpresa(id: number) {
+    if (id != null) {
+      this.empresasService.deletarEmpresa(id)
         .subscribe(() => {
           this.listarEmpresas();
           this.empresaSelecionada = undefined;

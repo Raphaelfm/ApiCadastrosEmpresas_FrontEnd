@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Empresas } from './empresas';
+import { catchError } from 'rxjs';
 
 @Injectable()
 
@@ -28,6 +29,14 @@ export class EmpresasService {
     cancelarAtualizacao(){}
     
     deletarEmpresa(id: number) {
-        return this.http.delete(`${this.apiUrl}/api/Empresas/${id}`);
-    }
+        return this.http.delete(`${this.apiUrl}/api/Empresas/${id}`)
+          .pipe(
+            catchError(error => {
+              console.error('Erro ao excluir empresa:', error);
+              throw error;
+            })
+          );
+        
+      }
+      
 }

@@ -1,6 +1,6 @@
 
 export interface Empresas{
     id: number;
-    name:string;
+    nome:string;
     descricao: string;
 }
