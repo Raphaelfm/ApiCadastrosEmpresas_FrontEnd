@@ -1,0 +1,51 @@
+body {
+    background-color: lavender;
+  }
+  
+  .mat-card {
+    background-color: #f3e5f5;
+    margin-bottom: 20px;
+    width: 400px;
+    max-width: 100%;
+  }
+  
+  .mat-card-title {
+    color: indigo;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .mat-form-field {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .mat-card-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  button {
+    margin-left: 10px;
+  }
+  
+
+.container {
+    background-color: #f5e6ff; /* Cor roxa clara */
+  }
+
+  button {
+    background-color: #8e24aa; /* Cor roxa escura */
+    color: #ffffff; /* Cor branca para o texto */
+    padding: 8px 16px; /* Espaçamento interno dos botões */
+    border: none; /* Remove a borda */
+    border-radius: 4px; /* Borda arredondada */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    transition: background-color 0.3s; /* Transição suave na mudança de cor de fundo */
+  }
+  
+  button:hover {
+    background-color: #6a1b9a; /* Cor roxa escura mais escura ao passar o mouse */
+  }
+
+  
